@@ -2,8 +2,14 @@
 <html>
 <head>
   <title><%= title %></title>
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   <h1><%= message %></h1>
+   <form action="/submit" method="POST">
+    <label for="domain">Domain name:</label>
+    <input type="text" id="domain" name="domain" placeholder="Enter domain name" required>
+    <button type="submit">Submit</button>
+  </form>
 </body>
 </html>
