@@ -1,15 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= title %></title>
+  <title>Domain Check</title>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <h1><%= message %></h1>
-   <form action="/submit" method="POST">
+   <form action="/submit" method="POST" id="formid">
     <label for="domain">Domain name:</label>
-    <input type="text" id="domain" name="domain" placeholder="Enter domain name" required>
+    <input type="text" id="domain" name="domain" placeholder="example.com" required>
+    <div id="error" style="color: red; display: none;"></div>
     <button type="submit">Submit</button>
   </form>
+  <script>
+    const input = document.getElementById("domain");
+    const form = document.getElementById("formid");
+    const errorDiv = document.getElementById("error")
+
+    const domainRegex = /^(?=.{1,253}$)(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?\.)+[A-Za-z]{2,63}$/;
+
+    function showError(msg) {
+        errorDiv.textContent = msg;
+        errorDiv.style.display = 'block';
+      }
+    
+    function hideError() {
+        errorDiv.textContent = '';
+        errorDiv.style.display = 'none';
+      }
+    
+    function validate() {
+        const val = input.value.trim();
+        if (val.length === 0) {
+          return { ok: false, msg: 'Domain is required.' };
+        }
+        if (!domainRegex.test(val)) {
+          return { ok: false, msg: 'Invalid domain format. Example: example.com' };
+        }
+        return { ok: true };
+      }
+
+    input.addEventListener('input', function() {
+        const result = validate();
+        if (result.ok) hideError();
+        else showError(result.msg);
+      });
+
+    form.addEventListener("submit", function(event) {
+      const result = validate();
+        if (!result.ok) {
+          event.preventDefault();
+          showError(result.msg);
+          input.focus();
+        } else {
+          hideError();
+        }
+    })
+  </script>
+
 </body>
 </html>
