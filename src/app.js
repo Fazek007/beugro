@@ -1,4 +1,5 @@
 const validateDomain = require('./middlewares/validateDomain');
+const randomGenerator = require('./middlewares/randomGenerator');
 const mongoose = require('mongoose');
 const connectDB = require('./config/db');
 const path = require("path");
@@ -23,7 +24,12 @@ app.get('/', (req, res) => {
 
 app.post('/submit', validateDomain, (req, res) => {
   const domain = req.body.domain.trim();
-  res.render('form');
+  res.redirect('decision');
+});
+
+app.get('/decision', randomGenerator, (req, res) => {
+  const { decision, number, generated_at } = req.randomResult;
+  res.render("decision", { decision, number, generated_at });
 });
 
 module.exports = app

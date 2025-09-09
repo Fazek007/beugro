@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+          <link rel="stylesheet" href="/style.css">
+    <body>
+        <div class="card">
+        <h1>The decision is: <%= decision ? "Yes" : "No" %></h1>
+
+        <% if (decision) { %>
+            <p><strong>Generated number:</strong> <%= number || "-" %></p>
+            <p><strong>Generated date:</strong> <%= generated_at || "-" %></p>
+        <% } %>
+        </div>
+    </body>
+    </head>
+</html>
