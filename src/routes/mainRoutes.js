@@ -6,7 +6,7 @@ const router = express.Router();
 
 
 router.get('/', (req, res) => {
-  res.render('form', data);
+  res.render('form');
 });
 
 router.post('/submit', validateDomain, (req, res) => {
