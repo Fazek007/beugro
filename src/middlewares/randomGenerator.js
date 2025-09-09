@@ -2,7 +2,7 @@ const DomainDecision = require('../models/DomainDecision');
 
 async function randomGenerator(req, res, next) {
     try {
-        const domain = req.query.domain;
+        const domain = req.session.domain;
         if (!domain) {
             return res.status(400).send("Domain is required!");
         }
