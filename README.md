@@ -25,7 +25,7 @@ npm install
 
 ### 3. Környezeti változók
 ```
-MONGO_URI=mongodb://localhost:27017/domain-decision
+MONGO_URI=mongodb://mongo:27017/domain_decisions
 SESSION_SECRET=your-secret
 PORT=3000
 ```
