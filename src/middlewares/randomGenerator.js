@@ -1,4 +1,4 @@
-const DomainDecision = require('../models/DomainDecision');
+const DomainDecision = require('../models/domainDecision');
 const { generateDecisionAndNumber, formatDate } = require('../utils/randomUtils');
 
 async function randomGenerator(req, res, next) {

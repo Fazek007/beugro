@@ -19,7 +19,8 @@
   },
   "scripts": {
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "start": "node src/server.js"
   },
   "jest": {
     "testEnvironment": "node"
