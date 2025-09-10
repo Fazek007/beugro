@@ -1,5 +1,5 @@
 const randomGenerator = require('../src/middlewares/randomGenerator');
-const DomainDecision = require('../src/models/DomainDecision');
+const DomainDecision = require('../src/models/domainDecision');
 const randomUtils = require('../src/utils/randomUtils');
 const { generateDecisionAndNumber } = require('../src/utils/randomUtils');
 
