@@ -15,7 +15,7 @@ A döntés és a generált szám (ha van) elmentésre kerül az adatbázisba, é
 ### 1. Klónozás
 ```bash
 git clone https://github.com/Fazek007/beugro
-cd project-name
+cd beugro
 ```
 
 ### 2. Függőségek telepítése
