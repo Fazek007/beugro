@@ -15,7 +15,7 @@ A döntés és a generált szám (ha van) elmentésre kerül az adatbázisba, é
 ### 1. Klónozás
 ```bash
 git clone https://github.com/Fazek007/beugro
-cd project-name
+cd beugro
 ```
 
 ### 2. Függőségek telepítése
@@ -25,7 +25,7 @@ npm install
 
 ### 3. Környezeti változók
 ```
-MONGO_URI=mongodb://localhost:27017/domain-decision
+MONGO_URI=mongodb://mongo:27017/domain_decisions
 SESSION_SECRET=your-secret
 PORT=3000
 ```
